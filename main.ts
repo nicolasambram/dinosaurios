@@ -4,6 +4,10 @@ namespace SpriteKind {
     export const p3 = SpriteKind.create()
     export const p4 = SpriteKind.create()
 }
+mp.onButtonEvent(mp.MultiplayerButton.A, ControllerButtonEvent.Pressed, function (player2) {
+	
+})
+tiles.setCurrentTilemap(tilemap`nivel1`)
 mp.setPlayerSprite(mp.playerSelector(mp.PlayerNumber.One), sprites.create(img`
     . . . . . . . . . . . . . . . . 
     . . . . c c c c . . . . . . . . 
@@ -80,3 +84,21 @@ mp.moveWithButtons(mp.playerSelector(mp.PlayerNumber.One))
 mp.moveWithButtons(mp.playerSelector(mp.PlayerNumber.Two))
 mp.moveWithButtons(mp.playerSelector(mp.PlayerNumber.Three))
 mp.moveWithButtons(mp.playerSelector(mp.PlayerNumber.Four))
+scene.cameraFollowSprite(sprites.create(img`
+    . . . . . . . . . . . . . . . . 
+    . . . . c c c c . . . . . . . . 
+    . . c c 2 2 2 2 c c . . . . . . 
+    . c 2 2 2 2 2 2 2 2 c . . . . . 
+    c 2 2 2 2 2 1 f 2 2 2 c . . . . 
+    c 2 2 2 2 2 f f 2 2 2 2 c . . . 
+    c 2 2 2 2 2 2 2 2 2 2 2 c . . . 
+    c c b b 1 b 2 2 2 2 2 2 d c . . 
+    c 2 3 3 3 2 2 2 2 2 d d d c . . 
+    . b 2 2 2 2 2 2 2 2 d d d c . . 
+    . . c b b c 2 2 b d d d d c c . 
+    . c b b c 2 2 b b d d d d c d c 
+    . c c c c c c d d d d d d d d c 
+    . . . c c c c d 2 2 b d d d c . 
+    . . c c c c c b 2 2 b c c c . . 
+    . . c b b b c d 2 2 b c . . . . 
+    `, SpriteKind.p1))
